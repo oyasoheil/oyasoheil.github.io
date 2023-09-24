@@ -38,27 +38,28 @@
       var correctAnswer = num1 + num2;
 
       if (answer == correctAnswer) {
-        document.getElementById('result').innerHTML = 'Correct! Your IP address is ' + getIpAddress();
+        // Get the user's IP address from the Python file
+        var request = new XMLHttpRequest();
+
+        request.open('GET', '/get_ip_address', true);
+
+        request.onload = function() {
+          if (request.status === 200) {
+            var ipAddress = JSON.parse(request.responseText).ip;
+            document.getElementById('result').innerHTML = 'Correct! Your IP address is ' + ipAddress;
+          } else {
+            alert('Failed to get IP address.');
+          }
+        };
+
+        request.send();
       } else {
         document.getElementById('result').innerHTML = 'Incorrect. The correct answer is ' + correctAnswer;
       }
     }
 
     function getIpAddress() {
-      var request = new XMLHttpRequest();
-
-      request.open('GET', 'https://api.ipify.org/?format=json', true);
-
-      request.onload = function() {
-        if (request.status === 200) {
-          var ipAddress = JSON.parse(request.responseText).ip;
-          document.getElementById('result').innerHTML += '.';
-        } else {
-          document.getElementById('result').innerHTML = 'Failed to get IP address.';
-        }
-      };
-
-      request.send();
+      // This function is no longer needed
     }
 
     window.onload = function() {
