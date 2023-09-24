@@ -1,9 +1,17 @@
-from django.shortcuts import render
+import http.server
+import socketserver
 
-def index(request):
-  num1 = request.POST.get('num1')
-  num2 = request.POST.get('num2')
+class MyHandler(http.server.SimpleHTTPRequestHandler):
+    def do_GET(self):
+        self.send_response(200)
+        self.send_header('Content-type', 'text/html')
+        self.end_headers()
 
-  sum = int(num1) + int(num2)
+        with open('index.html', 'r') as f:
+            self.wfile.write(f.read().encode('utf-8'))
 
-  return render(request, 'index.html', {'sum': sum})
+PORT = 8000
+
+server = socketserver.TCPServer(('localhost', PORT), MyHandler)
+
+server.serve_forever()
