@@ -1,19 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Oya Soheil!</title>
+    <title>Show IP</title>
     <style>
         body {
             padding-top: 50px;
-            background-image: linear-gradient(to bottom, #ffffff, #0000ff);
         }
-        table {
+        .frame {
+            background-image: linear-gradient(to bottom, #ffffff, #0000ff);
             border: 5px solid;
             border-color: #0000ff;
-            margin: auto;
-        }
-        td {
             padding: 20px;
+            margin: auto;
         }
         .highlight {
             color: blue;
@@ -39,18 +37,14 @@
     </script>
 </head>
 <body>
-    <table>
-        <tr>
-            <td>
-                <h1>Your IP:</h1>
-                <p id="user_ip"></p>
-                <button onclick="showIP()">Say My IP</button>
-                <br><br>
-                <span class="highlight">Your IP Address is an address that identifies you on Internet</span>
-                <br><br>
-                <button onclick="openGoogleIP()">Ask From Google</button>
-            </td>
-        </tr>
-    </table>
+    <div class="frame">
+        <h1>Your IP:</h1>
+        <p id="user_ip"></p>
+        <button onclick="showIP()">Say My IP</button>
+        <br><br>
+        <span class="highlight">Your IP Address is an address that identifies you on Internet</span>
+        <br><br>
+        <button onclick="openGoogleIP()">Ask From Google</button>
+    </div>
 </body>
 </html>
