@@ -2,6 +2,21 @@
 <html>
 <head>
     <title>Show IP</title>
+    <style>
+        table {
+            border: 8px solid;
+            border-color: #000000;
+            margin: auto;
+        }
+        td {
+            padding: 20px;
+        }
+        .highlight {
+            color: blue;
+            font-weight: bold;
+            font-size: 20px;
+        }
+    </style>
     <script>
         function showIP() {
             var xhttp = new XMLHttpRequest();
@@ -20,10 +35,18 @@
     </script>
 </head>
 <body>
-    <h1>Your IP:</h1>
-    <p id="user_ip"></p>
-    <button onclick="showIP()">Say My IP</button>
-    <br>
-    <button onclick="openGoogleIP()">Ask From Google</button>
+    <table>
+        <tr>
+            <td>
+                <h1>Your IP:</h1>
+                <p id="user_ip"></p>
+                <button onclick="showIP()">Say My IP</button>
+                <br><br>
+                <span class="highlight">Your IP Address is an address that identifies you on Internet</span>
+                <br><br>
+                <button onclick="openGoogleIP()">Ask From Google</button>
+            </td>
+        </tr>
+    </table>
 </body>
 </html>
