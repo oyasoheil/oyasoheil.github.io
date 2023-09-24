@@ -1,72 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>OyaSoheil1</title>
+    <title>Show IP</title>
+    <script>
+        function showIP() {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("user_ip").innerHTML = this.responseText;
+                }
+            };
+            xhttp.open("GET", "https://api.ipify.org?format=json", true);
+            xhttp.send();
+        }
+    </script>
 </head>
 <body>
-  <div id="frame">
-    <p>What is the sum of two random numbers?</p>
-    <p><span id="num1"></span> + <span id="num2"></span> = <input type="text" id="answer"></input></p>
-    <button type="button" id="submit">Submit</button>
-  </div>
-  <div id="result"></div>
-  <script>
-    function generateRandomNumbers() {
-      var request = new XMLHttpRequest();
-
-      request.open('GET', '/get_numbers', true);
-
-      request.onload = function() {
-        if (request.status === 200) {
-          var numbers = JSON.parse(request.responseText);
-
-          document.getElementById('num1').innerHTML = numbers[0];
-          document.getElementById('num2').innerHTML = numbers[1];
-        } else {
-          alert('Failed to generate random numbers.');
-        }
-      };
-
-      request.send();
-    }
-
-    function checkAnswer() {
-      var num1 = document.getElementById('num1').innerHTML;
-      var num2 = document.getElementById('num2').innerHTML;
-      var answer = document.getElementById('answer').value;
-
-      var correctAnswer = num1 + num2;
-
-      if (answer == correctAnswer) {
-        // Get the user's IP address from the Python file
-        var request = new XMLHttpRequest();
-
-        request.open('GET', '/get_ip_address', true);
-
-        request.onload = function() {
-          if (request.status === 200) {
-            var ipAddress = JSON.parse(request.responseText).ip;
-            document.getElementById('result').innerHTML = 'Correct! Your IP address is ' + ipAddress;
-          } else {
-            alert('Failed to get IP address.');
-          }
-        };
-
-        request.send();
-      } else {
-        document.getElementById('result').innerHTML = 'Incorrect. The correct answer is ' + correctAnswer;
-      }
-    }
-
-    function getIpAddress() {
-      // This function is no longer needed
-    }
-
-    window.onload = function() {
-      generateRandomNumbers();
-
-      document.getElementById('submit').addEventListener('click', checkAnswer);
-    };
-  </script>
+    <h1>Your IP:</h1>
+    <p id="user_ip"></p>
+    <button onclick="showIP()">Say My IP</button>
 </body>
 </html>
