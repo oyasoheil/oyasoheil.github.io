@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Oya Soheil</title>
+    <title>Show IP</title>
     <script>
         function showIP() {
             var xhttp = new XMLHttpRequest();
@@ -13,12 +13,16 @@
             xhttp.open("GET", "https://api.ipify.org?format=json", true);
             xhttp.send();
         }
+
+        function openGoogleIP() {
+            window.open("https://www.google.com/search?client=firefox-b-d&q=whats+my+ip", "_blank");
+        }
     </script>
 </head>
 <body>
     <h1>Your IP:</h1>
     <p id="user_ip"></p>
     <button onclick="showIP()">Say My IP</button>
-    <a href="https://www.google.com/search?client=firefox-b-d&q=whats+my+ip" target="_blank">Ask From Google</a>
+    <button onclick="openGoogleIP()">Ask From Google</button>
 </body>
 </html>
