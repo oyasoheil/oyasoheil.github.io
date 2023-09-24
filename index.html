@@ -23,15 +23,15 @@
         }
     </style>
     <script>
-        function showIP() {
-            var xhttp = new XMLHttpRequest();
-            xhttp.onreadystatechange = function() {
-                if (this.readyState == 4 && this.status == 200) {
-                    document.getElementById("user_ip").innerHTML = this.responseText;
-                }
-            };
-            xhttp.open("GET", "https://api.ipify.org?format=json", true);
-            xhttp.send();
+        async function showIP() {
+            try {
+                const response = await fetch('https://api.ipify.org?format=json');
+                const data = await response.json();
+                const ipAddress = data.ip;
+                document.getElementById("user_ip").innerHTML = `Your IP is: ${ipAddress}`;
+            } catch (error) {
+                console.log('Error:', error);
+            }
         }
 
         function openGoogleIP() {
