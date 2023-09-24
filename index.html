@@ -1,15 +1,61 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>جمع 2 عدد</title>
+  <title>Math Problem</title>
 </head>
 <body>
-  <form action="/" method="post">
-    <input type="number" name="num1" placeholder="عدد اول">
-    <input type="number" name="num2" placeholder="عدد دوم">
-    <input type="submit" value="ارسال">
-  </form>
-  <p>جمع 2 عدد: <span id="sum"></span></p>
+  <div id="frame">
+    <p>What is the sum of two random numbers?</p>
+    <p><span id="num1"></span> + <span id="num2"></span> = <input type="text" id="answer"></input></p>
+    <button type="button" id="submit">Submit</button>
+  </div>
+  <div id="result"></div>
+  <script>
+    function generateRandomNumbers() {
+      var num1 = Math.floor(Math.random() * 100);
+      var num2 = Math.floor(Math.random() * 100);
+      return [num1, num2];
+    }
+
+    function checkAnswer() {
+      var num1 = document.getElementById('num1').innerHTML;
+      var num2 = document.getElementById('num2').innerHTML;
+      var answer = document.getElementById('answer').value;
+
+      var correctAnswer = num1 + num2;
+
+      if (answer == correctAnswer) {
+        document.getElementById('result').innerHTML = 'Correct! Your IP address is ' + getIpAddress();
+      } else {
+        document.getElementById('result').innerHTML = 'Incorrect. The correct answer is ' + correctAnswer;
+      }
+    }
+
+    function getIpAddress() {
+      var request = new XMLHttpRequest();
+
+      request.open('GET', 'https://api.ipify.org/?format=json', true);
+
+      request.onload = function() {
+        if (request.status === 200) {
+          var ipAddress = JSON.parse(request.responseText).ip;
+          document.getElementById('result').innerHTML += '.';
+        } else {
+          document.getElementById('result').innerHTML = 'Failed to get IP address.';
+        }
+      };
+
+      request.send();
+    }
+
+    window.onload = function() {
+      var numbers = generateRandomNumbers();
+
+      document.getElementById('num1').innerHTML = numbers[0];
+      document.getElementById('num2').innerHTML = numbers[1];
+
+      document.getElementById('submit').addEventListener('click', checkAnswer);
+    };
+  </script>
 </body>
 </html>
