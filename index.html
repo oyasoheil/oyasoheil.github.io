@@ -7,10 +7,24 @@
             background-color: #222;
             color: #ccc;
             font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
         }
 
         h1 {
             color: #fff;
+            margin-top: 0;
         }
 
         p {
@@ -37,13 +51,15 @@
     </style>
 </head>
 <body>
-    <h1>Oya!</h1>
-    <p>Welcome to my page!</p>
+    <div class="container">
+        <h1>Oya!</h1>
+        <p>Welcome to my page!</p>
 
-    <ul>
-        <li><a href="mailto:oyasoheil@gmail.com"><i class="fa fa-envelope"></i> Email</a></li>
-        <li><a href="https://github.com/oyasoheil"><i class="fa fa-github"></i> GitHub</a></li>
-        <li><a rel="me" href="https://mastodon.online/@Sa">Mastodon</a></li>
-    </ul>
+        <ul>
+            <li><a href="mailto:oyasoheil@gmail.com"><i class="fa fa-envelope"></i> Email</a></li>
+            <li><a href="https://github.com/oyasoheil"><i class="fa fa-github"></i> GitHub</a></li>
+            <li><a rel="me" href="https://mastodon.online/@Sa">Mastodon</a></li>
+        </ul>
+    </div>
 </body>
 </html>
