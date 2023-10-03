@@ -7,16 +7,21 @@
             background-color: #222;
             color: #ccc;
             font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center; /* مرکز چینی افقی */
+            align-items: center; /* مرکز چینی عمودی */
+            height: 100vh; /* ارتفاع صفحه را در واحد درصد تنظیم می‌کند */
+            margin: 0;
         }
 
         .container {
             background-color: #222; /* رنگ پس زمینه سایت */
-            margin: 20px;
             padding: 20px; /* فاصله همسان در تمام جهت‌ها */
             border: 1px solid #ccc; /* خطوط باریک */
             width: 300px;  /* ابعاد کادر فعلی: 100px */
             height: 300px; /* ابعاد کادر فعلی: 100px */
             display: flex;
+            flex-direction: column;
             justify-content: center; /* مرکز چینی افقی */
             align-items: center; /* مرکز چینی عمودی */
         }
