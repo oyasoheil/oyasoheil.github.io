@@ -38,6 +38,8 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            position: relative; /* Add this line */
+            z-index: 1; /* Add this line */
         }
 
         h1 {
@@ -86,9 +88,9 @@
         <p>Welcome to my page!</p>
 
         <ul>
-            <li><a href="mailto:oyasoheil@gmail.com"><i class="fas fa-envelope"></i> Email</a></li>
-            <li><a rel="me" href="https://mastodon.online/@Sa"><i class="fab fa-mastodon"></i> Mastodon</a></li>
-            <li><a href="https://github.com/oyasoheil"><i class="fab fa-github"></i> GitHub</a></li>
+            <li><a href="mailto:oyasoheil@gmail.com" target="_blank"><i class="fas fa-envelope"></i> Email</a></li>
+            <li><a rel="me" href="https://mastodon.online/@Sa" target="_blank"><i class="fab fa-mastodon"></i> Mastodon</a></li>
+            <li><a href="https://github.com/oyasoheil" target="_blank"><i class="fab fa-github"></i> GitHub</a></li>
         </ul>
     </div>
 
