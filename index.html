@@ -21,11 +21,12 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.5); /* Adjust the opacity as desired */
+            background-color: rgba(0, 0, 0, 0.5); /* تنظیم شفافیت مطلوب */
             z-index: 9999;
             display: flex;
             justify-content: center;
             align-items: center;
+            pointer-events: none; /* اضافه کردن این خط */
         }
 
         .container {
@@ -38,8 +39,8 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            position: relative; /* Add this line */
-            z-index: 1; /* Add this line */
+            position: relative; /* اضافه کردن این خط */
+            z-index: 1; /* اضافه کردن این خط */
         }
 
         h1 {
@@ -95,7 +96,7 @@
     </div>
 
     <script>
-        // Your additional JavaScript code can be placed here
+        // کد جاوااسکریپت اضافی خود را اینجا قرار دهید
     </script>
 </body>
 </html>
