@@ -15,6 +15,19 @@
             margin: 0;
         }
 
+        .dimmer {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Adjust the opacity as desired */
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
         .container {
             background-color: #222;
             padding: 20px;
@@ -66,6 +79,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 </head>
 <body>
+    <div class="dimmer"></div>
+
     <div class="container">
         <h1>Oya!</h1>
         <p>Welcome to my page!</p>
@@ -77,74 +92,8 @@
         </ul>
     </div>
 
-    <canvas id="gameCanvas" width="300" height="300"></canvas>
-
     <script>
-        // Your game code goes here
-
-        // Example: Simple Snake Game
-
-        // Get the canvas element
-        const canvas = document.getElementById("gameCanvas");
-        const ctx = canvas.getContext("2d");
-
-        // Set up initial snake position
-        let snakeX = 10;
-        let snakeY = 10;
-        let gridSize = 20;
-
-        // Set up initial direction
-        let dx = gridSize;
-        let dy = 0;
-
-        // Update snake position
-        function moveSnake() {
-            snakeX += dx;
-            snakeY += dy;
-        }
-
-        // Draw the snake on the canvas
-        function drawSnake() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            ctx.fillStyle = "green";
-            ctx.fillRect(snakeX, snakeY, gridSize, gridSize);
-        }
-
-        // Update snake position and redraw
-        function update() {
-            moveSnake();
-            drawSnake();
-        }
-
-        // Handle keyboard input to change direction
-        function handleInput(event) {
-            const key = event.key;
-            if (key === "ArrowUp" && dy !== gridSize) {
-                dx = 0;
-                dy = -gridSize;
-            } else if (key === "ArrowDown" && dy !== -gridSize) {
-                dx = 0;
-                dy = gridSize;
-            } else if (key === "ArrowLeft" && dx !== gridSize) {
-                dx = -gridSize;
-                dy = 0;
-            } else if (key === "ArrowRight" && dx !== -gridSize) {
-                dx = gridSize;
-                dy = 0;
-            }
-        }
-
-        // Start the game loop
-        function gameLoop() {
-            update();
-            requestAnimationFrame(gameLoop);
-        }
-
-        // Add event listener for keyboard input
-        document.addEventListener("keydown", handleInput);
-
-        // Start the game loop
-        gameLoop();
+        // Your additional JavaScript code can be placed here
     </script>
 </body>
 </html>
