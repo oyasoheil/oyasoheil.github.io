@@ -4,18 +4,30 @@
 <title>Soheil Abbasi</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 <style>
-@keyframes lightBall {
-0%, 100% { 
-box-shadow: 10px 0 0 #fff; 
+@keyframes movingLight {
+0%, 100% {
+left: 0;
+top: 0;
+right: auto;
+bottom: auto;
 }
-25% { 
-box-shadow: 0 10px 0 0 #fff; 
+25% {
+left: auto;
+top: 0;
+right: 0;
+bottom: auto;
 }
-50% { 
-box-shadow: -10px 0 0 #fff; 
+50% {
+left: auto;
+top: auto;
+right: 0;
+bottom: 0;
 }
-75% { 
-box-shadow: 0 -10px 0 0 #fff; 
+75% {
+left: 0;
+top: auto;
+right: auto;
+bottom: 0;
 }
 }
 
@@ -39,12 +51,13 @@ text-align: center;
 width: 300px;
 }
 
-.container::before {
-content: '';
+.light {
 position: absolute;
-top: -10px; right: -10px; bottom: -10px; left: -10px;
-border-radius: 10px;
-animation: lightBall 6s linear infinite; /* Light ball effect */
+width: 10px;
+height: 10px;
+background-color: #fff; /* White light */
+border-radius: 50%; /* Circular shape */
+animation: movingLight 6s linear infinite; /* Moving light effect */
 }
 
 h1 {
@@ -88,6 +101,7 @@ font-size: 16px;
 </head>
 <body>
 <div class="container">
+<div class="light"></div> <!-- Light element -->
 <h1>Soheil Abbasi</h1>
 <p>Graphic Designer & Web Developer</p>
 
