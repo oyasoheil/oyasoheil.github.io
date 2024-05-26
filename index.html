@@ -4,27 +4,18 @@
 <title>Soheil Abbasi</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 <style>
-@keyframes movingLight {
-0%, 8%, 100% { 
-top: 0; 
-left: 0; 
+@keyframes glowingEdge {
+0%, 100% { 
+box-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #333, 0 0 30px #333, 0 0 40px #333, 0 0 55px #333, 0 0 75px #333;
 }
-25%, 33% { 
-top: 0; 
-right: 0; 
-left: auto; 
+25% { 
+box-shadow: 0 0 5px #fff, 0 0 25px #fff, 0 0 50px #fff, 0 0 75px #333, 0 0 100px #333, 0 0 125px #333, 0 0 150px #333, 0 0 200px #333;
 }
-50%, 58% { 
-right: 0; 
-bottom: 0; 
-top: auto; 
-left: auto; 
+50% { 
+box-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #333, 0 0 30px #333, 0 0 40px #333, 0 0 55px #333, 0 0 75px #333;
 }
-75%, 83% { 
-bottom: 0; 
-left: 0; 
-right: auto; 
-top: auto; 
+75% { 
+box-shadow: 0 0 5px #fff, 0 0 25px #fff, 0 0 50px #fff, 0 0 75px #333, 0 0 100px #333, 0 0 125px #333, 0 0 150px #333, 0 0 200px #333;
 }
 }
 
@@ -46,15 +37,8 @@ border: 1px solid #333;
 position: relative;
 text-align: center;
 width: 300px;
-}
-
-.light {
-position: absolute;
-width: 10px;
-height: 10px;
-background-color: #fff;
-border-radius: 50%;
-animation: movingLight 10s linear infinite;
+height: 300px;
+animation: glowingEdge 20s linear infinite;
 }
 
 h1 {
@@ -72,10 +56,11 @@ margin-bottom: 20px;
 ul {
 list-style-type: none;
 padding: 0;
+margin-top: 30px; /* Increased spacing */
 }
 
 ul li {
-margin-bottom: 10px;
+margin-bottom: 20px; /* Increased spacing */
 }
 
 ul li a {
@@ -83,11 +68,12 @@ text-decoration: none;
 color: #fff;
 display: flex;
 align-items: center;
-transition: color 0.3s ease;
+transition: all 0.3s ease;
 }
 
 ul li a:hover {
 color: #ccc;
+transform: translateY(-5px); /* Rise effect on hover */
 }
 
 ul li a i {
@@ -98,14 +84,14 @@ font-size: 16px;
 </head>
 <body>
 <div class="container">
-<div class="light"></div> 
 <h1>Soheil Abbasi</h1>
-<p>Graphic Designer & Web Developer</p>
+<p>Web Developer</p>
+
 <ul>
-<li><a href="/cdn-cgi/l/email-protection#5f30263e2c30373a36331f38323e3633713c3032" target="_blank"><i class="fas fa-envelope"></i> Email</a></li>
+<li><a href="mailto:oyasoheil@gmail.com" target="_blank"><i class="fas fa-envelope"></i> Email</a></li>
 <li><a href="https://mastodon.online/@Sa" target="_blank"><i class="fab fa-mastodon"></i> Mastodon</a></li>
 <li><a href="https://github.com/oyasoheil" target="_blank"><i class="fab fa-github"></i> GitHub</a></li>
 </ul>
 </div>
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</body>
 </html>
