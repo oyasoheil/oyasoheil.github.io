@@ -4,9 +4,40 @@
 <title>Soheil Abbasi</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 <style>
+@keyframes lightGlint {
+0%, 100% { 
+box-shadow: 1px 1px 10px #fff, 
+-1px -1px 10px #fff, 
+1px -1px 10px #fff, 
+-1px 1px 10px #fff; 
+transform: rotate(0deg); 
+}
+25% { 
+box-shadow: 10px 0px 20px #fff, 
+-10px 0px 20px #fff, 
+10px 0px 20px #fff, 
+-10px 0px 20px #fff; 
+transform: rotate(90deg); 
+}
+50% { 
+box-shadow: 1px 1px 20px #fff, 
+-1px -1px 20px #fff, 
+1px -1px 20px #fff, 
+-1px 1px 20px #fff; 
+transform: rotate(180deg); 
+}
+75% { 
+box-shadow: 0px 10px 20px #fff, 
+0px -10px 20px #fff, 
+0px 10px 20px #fff, 
+0px -10px 20px #fff; 
+transform: rotate(270deg); 
+}
+}
+
 body {
-background-color: #000; /* Background color set to black */
-font-family: Arial, sans-serif;
+background-color: #000; /* Stable black background */
+font-family: 'Helvetica Neue', Arial, sans-serif; /* Clearer font */
 display: flex;
 justify-content: center;
 align-items: center;
@@ -15,24 +46,24 @@ margin: 0;
 }
 
 .container {
-background-color: #fff;
+background-color: transparent; /* Transparent background */
 padding: 30px;
 border-radius: 10px;
-box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+border: 1px solid #333; /* Solid border */
+position: relative;
+animation: lightGlint 6s linear infinite; /* Updated light effect */
 text-align: center;
 width: 300px;
-transform: scale(0); /* Initially scaled down */
-transition: transform 0.5s ease; /* Smooth scaling transition */
 }
 
 h1 {
-color: #333;
+color: #fff; /* White color for better clarity */
 font-size: 24px;
 margin-bottom: 10px;
 }
 
 p {
-color: #666;
+color: #ccc; /* Lighter color for better clarity */
 font-size: 16px;
 margin-bottom: 20px;
 }
@@ -48,14 +79,14 @@ margin-bottom: 10px;
 
 ul li a {
 text-decoration: none;
-color: #333;
+color: #fff; /* White color for better clarity */
 display: flex;
 align-items: center;
 transition: color 0.3s ease;
 }
 
 ul li a:hover {
-color: #666;
+color: #ccc; /* Lighter color on hover for better clarity */
 }
 
 ul li a i {
@@ -75,11 +106,5 @@ font-size: 16px;
 <li><a href="https://github.com/oyasoheil" target="_blank"><i class="fab fa-github"></i> GitHub</a></li>
 </ul>
 </div>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
-<script>
-// GSAP animation for scaling up the container
-gsap.to('.container', { scale: 1, duration: 1, delay: 0.5 });
-</script>
 </body>
 </html>
