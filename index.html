@@ -1,81 +1,126 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Soheil Abbasi</title>
-  <link rel="stylesheet" href="style.css">
+    <title>Soheil Abbasi</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            background-image: linear-gradient(to bottom right, #222, #444);
+            color: #ccc;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .dimmer {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            pointer-events: none;
+        }
+
+        .container {
+            background-color: #222;
+            padding: 20px;
+            border: 1px solid #ccc;
+            width: 300px;
+            height: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        h1 {
+            color: #ccc;
+        }
+
+        p {
+            color: #ccc;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+        }
+
+        ul li a {
+            text-decoration: none;
+            color: #ccc;
+            display: flex;
+            align-items: center;
+            transition: color 0.3s ease;
+        }
+
+        ul li a i {
+            margin-right: 5px;
+            font-size: 16px;
+        }
+
+        @media (max-width: 767px) {
+            ul li a i {
+                font-size: 24px;
+            }
+        }
+
+        .container:hover {
+            box-shadow: 0 0 40px rgba(255, 255, 255, 0.4);
+        }
+
+        .dimmer:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 </head>
 <body>
-  <div class="container">
-    <header>
-      <nav>
+    <div class="dimmer"></div>
+
+    <div class="container">
+        <h1>Oya!</h1>
+        <p>Welcome to my page!</p>
+
         <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Portfolio</a></li>
-          <li><a href="#">Contact</a></li>
+            <li><a href="mailto:oyasoheil@gmail.com" target="_blank"><i class="fas fa-envelope"></i> Email</a></li>
+            <li><a rel="me" href="https://mastodon.online/@Sa" target="_blank"><i class="fab fa-mastodon"></i> Mastodon</a></li>
+            <li><a href="https://github.com/oyasoheil" target="_blank"><i class="fab fa-github"></i> GitHub</a></li>
         </ul>
-      </nav>
-    </header>
+    </div>
 
-    <main>
-      <section class="hero-section">
-        <div class="hero-content">
-          <h1 class="hero-title">Welcome to Soheil Abbasi</h1>
-          <p class="hero-subtitle">Graphic Designer & Web Developer</p>
-        </div>
-        <img class="hero-image" src="hero-image.jpg" alt="Hero Image">
-      </section>
+    <script>
+        const dimmer = document.querySelector('.dimmer');
 
-      <section class="about-section">
-        <div class="about-content">
-          <h2 class="about-title">About Me</h2>
-          <p class="about-text">I am a passionate graphic designer and web developer with years of experience in creating visually stunning and user-friendly websites.</p>
-        </div>
-        <img class="about-image" src="about-image.jpg" alt="About Image">
-      </section>
-
-      <section class="portfolio-section">
-        <h2 class="portfolio-title">My Portfolio</h2>
-        <div class="portfolio-items">
-          <div class="portfolio-item">
-            <img src="portfolio-item1.jpg" alt="Portfolio Item 1">
-            <h3 class="portfolio-item-title">Project 1</h3>
-          </div>
-          <div class="portfolio-item">
-            <img src="portfolio-item2.jpg" alt="Portfolio Item 2">
-            <h3 class="portfolio-item-title">Project 2</h3>
-          </div>
-          <div class="portfolio-item">
-            <img src="portfolio-item3.jpg" alt="Portfolio Item 3">
-            <h3 class="portfolio-item-title">Project 3</h3>
-          </div>
-        </div>
-      </section>
-
-      <section class="contact-section">
-        <h2 class="contact-title">Contact Me</h2>
-        <form class="contact-form">
-          <input type="text" placeholder="Name" required>
-          <input type="email" placeholder="Email" required>
-          <textarea placeholder="Message" required></textarea>
-          <button type="submit">Send</button>
-        </form>
-      </section>
-    </main>
-
-    <footer>
-      <div class="footer-links">
-        <a href="#">Facebook</a>
-        <a href="#">Twitter</a>
-        <a href="#">LinkedIn</a>
-      </div>
-      <p>&copy; 2023 Soheil Abbasi. All rights reserved.</p>
-    </footer>
-  </div>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
-  <script src="script.js"></script>
+        dimmer.addEventListener('click', () => {
+            dimmer.style.backgroundColor = `rgba(0, 0, 0, ${Math.random()})`;
+        });
+    </script>
 </body>
 </html>
