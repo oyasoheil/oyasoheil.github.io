@@ -21,6 +21,7 @@
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
             text-align: center;
             width: 300px;
+            opacity: 0; /* Initially hidden */
         }
 
         h1 {
@@ -73,5 +74,11 @@
             <li><a href="https://github.com/oyasoheil" target="_blank"><i class="fab fa-github"></i> GitHub</a></li>
         </ul>
     </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+    <script>
+        gsap.to('.container', { opacity: 1, duration: 1, delay: 0.5 });
+        gsap.from('.container', { y: -50, duration: 1, delay: 0.5 });
+    </script>
 </body>
 </html>
