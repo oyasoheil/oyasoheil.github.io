@@ -4,34 +4,18 @@
 <title>Soheil Abbasi</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 <style>
-@keyframes lightGlint {
+@keyframes lightBall {
 0%, 100% { 
-box-shadow: 1px 1px 10px #fff, 
--1px -1px 10px #fff, 
-1px -1px 10px #fff, 
--1px 1px 10px #fff; 
-transform: rotate(0deg); 
+box-shadow: 10px 0 0 #fff; 
 }
 25% { 
-box-shadow: 10px 0px 20px #fff, 
--10px 0px 20px #fff, 
-10px 0px 20px #fff, 
--10px 0px 20px #fff; 
-transform: rotate(90deg); 
+box-shadow: 0 10px 0 0 #fff; 
 }
 50% { 
-box-shadow: 1px 1px 20px #fff, 
--1px -1px 20px #fff, 
-1px -1px 20px #fff, 
--1px 1px 20px #fff; 
-transform: rotate(180deg); 
+box-shadow: -10px 0 0 #fff; 
 }
 75% { 
-box-shadow: 0px 10px 20px #fff, 
-0px -10px 20px #fff, 
-0px 10px 20px #fff, 
-0px -10px 20px #fff; 
-transform: rotate(270deg); 
+box-shadow: 0 -10px 0 0 #fff; 
 }
 }
 
@@ -51,9 +35,16 @@ padding: 30px;
 border-radius: 10px;
 border: 1px solid #333; /* Solid border */
 position: relative;
-animation: lightGlint 6s linear infinite; /* Updated light effect */
 text-align: center;
 width: 300px;
+}
+
+.container::before {
+content: '';
+position: absolute;
+top: -10px; right: -10px; bottom: -10px; left: -10px;
+border-radius: 10px;
+animation: lightBall 6s linear infinite; /* Light ball effect */
 }
 
 h1 {
