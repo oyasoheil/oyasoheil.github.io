@@ -7,138 +7,75 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <nav>
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Portfolio</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+  <div class="container">
+    <header>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Portfolio</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
 
-  <main>
-    <section class="hero-section">
-      <div class="hero-text">
-        <h1>Welcome to Soheil Abbasi</h1>
-        <p>Graphic Designer & Web Developer</p>
-      </div>
-      <img class="hero-image" src="hero-image.jpg" alt="Hero Image">
-    </section>
-
-    <section class="about-section">
-      <img class="about-image" src="about-image.jpg" alt="About Image">
-      <div class="about-text">
-        <h2>About Me</h2>
-        <p>I am a passionate graphic designer and web developer with years of experience in creating visually stunning and user-friendly websites.</p>
-      </div>
-    </section>
-
-    <section class="portfolio-section">
-      <h2>My Portfolio</h2>
-      <div class="portfolio-items">
-        <div class="portfolio-item">
-          <img src="portfolio-item1.jpg" alt="Portfolio Item 1">
-          <h3>Project 1</h3>
+    <main>
+      <section class="hero-section">
+        <div class="hero-content">
+          <h1 class="hero-title">Welcome to Soheil Abbasi</h1>
+          <p class="hero-subtitle">Graphic Designer & Web Developer</p>
         </div>
-        <div class="portfolio-item">
-          <img src="portfolio-item2.jpg" alt="Portfolio Item 2">
-          <h3>Project 2</h3>
+        <img class="hero-image" src="hero-image.jpg" alt="Hero Image">
+      </section>
+
+      <section class="about-section">
+        <div class="about-content">
+          <h2 class="about-title">About Me</h2>
+          <p class="about-text">I am a passionate graphic designer and web developer with years of experience in creating visually stunning and user-friendly websites.</p>
         </div>
-        <div class="portfolio-item">
-          <img src="portfolio-item3.jpg" alt="Portfolio Item 3">
-          <h3>Project 3</h3>
+        <img class="about-image" src="about-image.jpg" alt="About Image">
+      </section>
+
+      <section class="portfolio-section">
+        <h2 class="portfolio-title">My Portfolio</h2>
+        <div class="portfolio-items">
+          <div class="portfolio-item">
+            <img src="portfolio-item1.jpg" alt="Portfolio Item 1">
+            <h3 class="portfolio-item-title">Project 1</h3>
+          </div>
+          <div class="portfolio-item">
+            <img src="portfolio-item2.jpg" alt="Portfolio Item 2">
+            <h3 class="portfolio-item-title">Project 2</h3>
+          </div>
+          <div class="portfolio-item">
+            <img src="portfolio-item3.jpg" alt="Portfolio Item 3">
+            <h3 class="portfolio-item-title">Project 3</h3>
+          </div>
         </div>
+      </section>
+
+      <section class="contact-section">
+        <h2 class="contact-title">Contact Me</h2>
+        <form class="contact-form">
+          <input type="text" placeholder="Name" required>
+          <input type="email" placeholder="Email" required>
+          <textarea placeholder="Message" required></textarea>
+          <button type="submit">Send</button>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-links">
+        <a href="#">Facebook</a>
+        <a href="#">Twitter</a>
+        <a href="#">LinkedIn</a>
       </div>
-    </section>
+      <p>&copy; 2023 Soheil Abbasi. All rights reserved.</p>
+    </footer>
+  </div>
 
-    <section class="contact-section">
-      <h2>Contact Me</h2>
-      <form class="contact-form">
-        <input type="text" placeholder="Name" required>
-        <input type="email" placeholder="Email" required>
-        <textarea placeholder="Message" required></textarea>
-        <button type="submit">Send</button>
-      </form>
-    </section>
-  </main>
-
-  <footer>
-    <div class="footer-links">
-      <a href="#">Facebook</a>
-      <a href="#">Twitter</a>
-      <a href="#">LinkedIn</a>
-    </div>
-    <p>&copy; 2023 Soheil Abbasi. All rights reserved.</p>
-  </footer>
-
-  <!-- Include Anime.js library -->
-  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
-
-  <!-- Include TweenMax library -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
-
-  <script>
-    // Anime.js animation for hero text
-    anime({
-      targets: '.hero-text',
-      opacity: 1,
-      duration: 1000,
-      delay: 500,
-      easing: 'linear'
-    });
-
-    // TweenMax animation for hero image parallax effect
-    gsap.to('.hero-image', {
-      y: '20%',
-      scrollTrigger: {
-        trigger: '.hero-section',
-        start: 'top',
-        end: 'bottom',
-        scrub: true
-      }
-    });
-
-    // Anime.js animation for about section
-    anime({
-      targets: '.about-section',
-      opacity: [0, 1],
-      translateY: ['-20%', '0'],
-      duration: 1000,
-      delay: 500,
-      easing: 'linear'
-    });
-
-    // Anime.js animation for portfolio items
-    anime({
-      targets: '.portfolio-item',
-      opacity: [0, 1],
-      translateY: ['20%', '0'],
-      delay: anime.stagger(200),
-      duration: 1000,
-      easing: 'linear'
-    });
-
-    // Anime.js animation for contact form
-    anime({
-      targets: '.contact-form input, .contact-form textarea, .contact-form button',
-      opacity: [0, 1],
-      translateY: ['20%', '0'],
-      delay: anime.stagger(100),
-      duration: 1000,
-      easing: 'linear'
-    });
-
-    // Anime.js animation for footer links
-    anime({
-      targets: '.footer-links a',
-      opacity: [0, 1],
-      translateY: ['20%', '0'],
-      delay: anime.stagger(200),
-      duration: 1000,
-      easing: 'linear'
-    });
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
